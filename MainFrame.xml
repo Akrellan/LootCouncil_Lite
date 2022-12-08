@@ -3,17 +3,17 @@
 	<Button name="LootCouncil_Header" virtual="true">
 		<Scripts>
 			<OnClick>
-        LootCouncil_Browser.sortTable(this:GetID())
-      </OnClick>
+				LootCouncil_Browser.sortTable(this:GetID())
+			</OnClick>
 			<OnEnter>
-        getglobal(self:GetName().."BG"):SetVertexColor(1, 1, 1, 1)
-      </OnEnter>
+				getglobal(self:GetName().."BG"):SetVertexColor(1, 1, 1, 1)
+			</OnEnter>
 			<OnLeave>
-        getglobal(self:GetName().."BG"):SetVertexColor(0.7, 0.7, 0.7, 0.7)
-      </OnLeave>
+				getglobal(self:GetName().."BG"):SetVertexColor(0.7, 0.7, 0.7, 0.7)
+			</OnLeave>
 			<OnLoad>
-        self:GetScript("OnLeave")(self)
-      </OnLoad>
+				self:GetScript("OnLeave")(self)
+			</OnLoad>
 		</Scripts>
 		<NormalTexture name="$parentBG">
 			<Color r="0.4" g="0.4" b="0.04" a="0.4" />
@@ -44,20 +44,20 @@
 				</Anchors>
 				<Scripts>
 					<OnEnter>
-            LootCouncil_Browser.toolMouseOver((self:GetParent()):GetID())
-            getglobal((self:GetParent()):GetName().."BG"):Show()
-          </OnEnter>
+						LootCouncil_Browser.toolMouseOver((self:GetParent()):GetID())
+						getglobal((self:GetParent()):GetName().."BG"):Show()
+					</OnEnter>
 					<OnLeave>
-            LootCouncil_Browser.toolMouseLeave()
-            if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
-            getglobal((self:GetParent()):GetName().."BG"):Hide()
-            end
-          </OnLeave>
+						LootCouncil_Browser.toolMouseLeave()
+						if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
+						getglobal((self:GetParent()):GetName().."BG"):Hide()
+						end
+					</OnLeave>
 					<OnClick>
-            if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
-            LootCouncil_Browser.SelectEntry(self:GetParent():GetID())
-            end
-          </OnClick>
+						if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
+						LootCouncil_Browser.SelectEntry(self:GetParent():GetID())
+						end
+					</OnClick>
 				</Scripts>
 			</Button>
 			<Button name="$parentItemFrame2" hidden="true" frameStrata="HIGH">
@@ -71,20 +71,20 @@
 				</Anchors>
 				<Scripts>
 					<OnEnter>
-            LootCouncil_Browser.toolMouseOverDual((self:GetParent()):GetID())
-            getglobal((self:GetParent()):GetName().."BG"):Show()
-          </OnEnter>
+						LootCouncil_Browser.toolMouseOverDual((self:GetParent()):GetID())
+						getglobal((self:GetParent()):GetName().."BG"):Show()
+					</OnEnter>
 					<OnLeave>
-            LootCouncil_Browser.toolMouseLeave()
-            if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
-            getglobal((self:GetParent()):GetName().."BG"):Hide()
-            end
-          </OnLeave>
+						LootCouncil_Browser.toolMouseLeave()
+						if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
+						getglobal((self:GetParent()):GetName().."BG"):Hide()
+						end
+					</OnLeave>
 					<OnClick>
-            if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
-            LootCouncil_Browser.SelectEntry(self:GetParent():GetID())
-            end
-          </OnClick>
+						if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
+						LootCouncil_Browser.SelectEntry(self:GetParent():GetID())
+						end
+					</OnClick>
 				</Scripts>
 			</Button>
 			<Button name="$parentVoteHover1" frameStrata="HIGH">
@@ -100,20 +100,20 @@
 				</Anchors>
 				<Scripts>
 					<OnEnter>
-            LootCouncil_Browser.voteToolActivate(self:GetParent():GetID())
-            getglobal((self:GetParent()):GetName().."BG"):Show()
-          </OnEnter>
+						LootCouncil_Browser.voteToolActivate(self:GetParent():GetID())
+						getglobal((self:GetParent()):GetName().."BG"):Show()
+					</OnEnter>
 					<OnLeave>
-            LootCouncil_Browser.toolMouseLeave()
-            if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
-            getglobal((self:GetParent()):GetName().."BG"):Hide()
-            end
-          </OnLeave>
+						LootCouncil_Browser.toolMouseLeave()
+						if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
+						getglobal((self:GetParent()):GetName().."BG"):Hide()
+						end
+					</OnLeave>
 					<OnClick>
-            if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
-            LootCouncil_Browser.SelectEntry(self:GetParent():GetID())
-            end
-          </OnClick>
+						if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
+						LootCouncil_Browser.SelectEntry(self:GetParent():GetID())
+						end
+					</OnClick>
 				</Scripts>
 			</Button>
 			<Button name="$parentForButton" inherits="UIPanelButtonTemplate" text="">
@@ -127,21 +127,21 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-            self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
-          </OnLoad>
+						self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+					</OnLoad>
 					<OnEnter>
-            LootCouncil_Browser.voteDescTooltip(LootCouncilLocalization["FOR"])
-            getglobal((self:GetParent()):GetName().."BG"):Show()
-          </OnEnter>
+						LootCouncil_Browser.voteDescTooltip(LootCouncilLocalization["FOR"])
+						getglobal((self:GetParent()):GetName().."BG"):Show()
+					</OnEnter>
 					<OnLeave>
-            LootCouncil_Browser.toolMouseLeave()
-            if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
-            getglobal((self:GetParent()):GetName().."BG"):Hide()
-            end
-          </OnLeave>
+						LootCouncil_Browser.toolMouseLeave()
+						if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
+						getglobal((self:GetParent()):GetName().."BG"):Hide()
+						end
+					</OnLeave>
 					<OnClick>
-            LootCouncil_Browser.CastVote((self:GetParent()):GetID(), "For", arg1);
-          </OnClick>
+						LootCouncil_Browser.CastVote((self:GetParent()):GetID(), "For", arg1);
+					</OnClick>
 				</Scripts>
 				<NormalTexture inherits="UIPanelButtonUpTexture" file="Interface\BUTTONS\UI-CheckBox-Check">
 					<TexCoords left="0.17" right="0.8" top="0.17" bottom="0.8" />
@@ -167,21 +167,21 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-            self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
-          </OnLoad>
+						self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+					</OnLoad>
 					<OnEnter>
-            LootCouncil_Browser.voteDescTooltip(LootCouncilLocalization["AGAINST"])
-            getglobal((self:GetParent()):GetName().."BG"):Show()
-          </OnEnter>
+						LootCouncil_Browser.voteDescTooltip(LootCouncilLocalization["AGAINST"])
+						getglobal((self:GetParent()):GetName().."BG"):Show()
+					</OnEnter>
 					<OnLeave>
-            LootCouncil_Browser.toolMouseLeave()
-            if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
-            getglobal((self:GetParent()):GetName().."BG"):Hide()
-            end
-          </OnLeave>
+						LootCouncil_Browser.toolMouseLeave()
+						if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
+						getglobal((self:GetParent()):GetName().."BG"):Hide()
+						end
+					</OnLeave>
 					<OnClick>
-            LootCouncil_Browser.CastVote((self:GetParent()):GetID(), "Against", arg1);
-          </OnClick>
+						LootCouncil_Browser.CastVote((self:GetParent()):GetID(), "Against", arg1);
+					</OnClick>
 				</Scripts>
 				<NormalTexture inherits="UIPanelButtonUpTexture" file="Interface\BUTTONS\UI-Panel-MinimizeButton-Up">
 					<TexCoords left="0.19" right="0.81" top="0.19" bottom="0.81" />
@@ -207,21 +207,21 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-            self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
-          </OnLoad>
+						self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+					</OnLoad>
 					<OnEnter>
-            LootCouncil_Browser.voteDescTooltip(LootCouncilLocalization["CANCEL"])
-            getglobal((self:GetParent()):GetName().."BG"):Show()
-          </OnEnter>
+						LootCouncil_Browser.voteDescTooltip(LootCouncilLocalization["CANCEL"])
+						getglobal((self:GetParent()):GetName().."BG"):Show()
+					</OnEnter>
 					<OnLeave>
-            LootCouncil_Browser.toolMouseLeave()
-            if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
-            getglobal((self:GetParent()):GetName().."BG"):Hide()
-            end
-          </OnLeave>
+						LootCouncil_Browser.toolMouseLeave()
+						if not LootCouncil_Browser.IsSelected(self:GetParent():GetID()) then
+						getglobal((self:GetParent()):GetName().."BG"):Hide()
+						end
+					</OnLeave>
 					<OnClick>
-            LootCouncil_Browser.CastVote((self:GetParent()):GetID(), "None", arg1);
-          </OnClick>
+						LootCouncil_Browser.CastVote((self:GetParent()):GetID(), "None", arg1);
+					</OnClick>
 				</Scripts>
 				<NormalTexture inherits="UIPanelButtonUpTexture" file="Interface\BUTTONS\UI-GroupLoot-Pass-Up">
 					<TexCoords left="0.05" right="0.95" top="0.05" bottom="0.95" />
@@ -305,21 +305,21 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-        getglobal(self:GetName().."BG"):Hide()
-      </OnLoad>
+				getglobal(self:GetName().."BG"):Hide()
+			</OnLoad>
 			<OnClick>
-        if not LootCouncil_Browser.IsSelected(self:GetID()) then
-        LootCouncil_Browser.SelectEntry(self:GetID())
-        end
-      </OnClick>
+				if not LootCouncil_Browser.IsSelected(self:GetID()) then
+				LootCouncil_Browser.SelectEntry(self:GetID())
+				end
+			</OnClick>
 			<OnEnter>
-        getglobal(self:GetName().."BG"):Show()
-      </OnEnter>
+				getglobal(self:GetName().."BG"):Show()
+			</OnEnter>
 			<OnLeave>
-        if not LootCouncil_Browser.IsSelected(self:GetID()) then
-        getglobal(self:GetName().."BG"):Hide()
-        end
-      </OnLeave>
+				if not LootCouncil_Browser.IsSelected(self:GetID()) then
+				getglobal(self:GetName().."BG"):Hide()
+				end
+			</OnLeave>
 		</Scripts>
 		<NormalTexture name="$parentBG">
 			<Color r="0" g="0" b="0.6" a="0.35" />
@@ -495,14 +495,14 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-            self:Hide()
-          </OnLoad>
+						self:Hide()
+					</OnLoad>
 					<OnEnter>
-            LootCouncil_Browser.ShowCurrentItemTooltip();
-          </OnEnter>
+						LootCouncil_Browser.ShowCurrentItemTooltip();
+					</OnEnter>
 					<OnLeave>
-            LootCouncil_Browser.toolMouseLeave();
-          </OnLeave>
+						LootCouncil_Browser.toolMouseLeave();
+					</OnLeave>
 				</Scripts>
 			</Frame>
 			<Frame name="CurrentSelectionHover" hidden="true" frameStrata="MEDIUM">
@@ -516,11 +516,11 @@
 				</Anchors>
 				<Scripts>
 					<OnEnter>
-            LootCouncil_Browser.ShowCurrentSelectionTooltip();
-          </OnEnter>
+						LootCouncil_Browser.ShowCurrentSelectionTooltip();
+					</OnEnter>
 					<OnLeave>
-            LootCouncil_Browser.toolMouseLeave();
-          </OnLeave>
+						LootCouncil_Browser.toolMouseLeave();
+					</OnLeave>
 				</Scripts>
 			</Frame>
 			<Button name="AbortButton" inherits="UIPanelButtonTemplate" hidden="true" text="End Session">
@@ -534,11 +534,11 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-            LootCouncil_Browser.initiateAbort();
-          </OnClick>
-		  	<OnLoad>
-				self:SetText(LootCouncilLocalization["END_SESSION"]);
-			</OnLoad>
+						LootCouncil_Browser.initiateAbort();
+					</OnClick>
+					<OnLoad>
+						self:SetText(LootCouncilLocalization["END_SESSION"]);
+					</OnLoad>
 				</Scripts>
 			</Button>
 			<Button name="SyncButton" inherits="UIPanelButtonTemplate" hidden="true" text="Resync">
@@ -552,8 +552,8 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-					LootCouncil_Browser.resync_start();
-				  </OnClick>
+						LootCouncil_Browser.resync_start();
+					</OnClick>
 					<OnLoad>
 						self:SetText(LootCouncilLocalization["RESYNC"]);
 					</OnLoad>
@@ -598,11 +598,11 @@
 				</Anchors>
 				<Scripts>
 					<OnEnter>
-            LootCouncil_Browser.ShowCurrentSelectionDualTooltip();
-          </OnEnter>
+						LootCouncil_Browser.ShowCurrentSelectionDualTooltip();
+					</OnEnter>
 					<OnLeave>
-            LootCouncil_Browser.toolMouseLeave();
-          </OnLeave>
+						LootCouncil_Browser.toolMouseLeave();
+					</OnLeave>
 				</Scripts>
 			</Frame>
 			<Button name="DisenchantButton" inherits="UIPanelButtonTemplate" text="Disenchant Item" hidden="true">
@@ -619,26 +619,26 @@
 						self:SetText(LootCouncilLocalization["DISENCHANT"]);
 					</OnLoad>
 				</Scripts>
-      </Button>
-      <Button name="AwardButton" inherits="UIPanelButtonTemplate" hidden="true" text="Award Item">
-        <Size>
-          <AbsDimension x="172" y="26" />
-        </Size>
-        <Anchors>
-          <Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT">
-            <Offset x="55" y="73" />
-          </Anchor>
-        </Anchors>
-        <Scripts>
-          <OnClick>
-            LootCouncil_Browser.awardItemButtonClick();
-          </OnClick>
-		  <OnLoad>
-			  self:SetText(LootCouncilLocalization["AWARD"]);
-			</OnLoad>
-        </Scripts>
-      </Button>
-    </Frames>
+			</Button>
+			<Button name="AwardButton" inherits="UIPanelButtonTemplate" hidden="true" text="Award Item">
+				<Size>
+					<AbsDimension x="172" y="26" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT">
+						<Offset x="55" y="73" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						LootCouncil_Browser.awardItemButtonClick();
+					</OnClick>
+					<OnLoad>
+						self:SetText(LootCouncilLocalization["AWARD"]);
+					</OnLoad>
+				</Scripts>
+			</Button>
+		</Frames>
 		<Layers>
 			<Layer>
 				<Texture name="CurrentItemTexture" hidden="true" file="Interface\Icons\Ability_Creature_Disease_05">
@@ -879,32 +879,32 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-        self.TimeSinceLastUpdate = 0;
-        self:RegisterForDrag("LeftButton")
-        MainFrame_OnLoad();
-      </OnLoad>
+				self.TimeSinceLastUpdate = 0;
+				self:RegisterForDrag("LeftButton")
+				MainFrame_OnLoad();
+			</OnLoad>
 			<OnDragStart>
-        self:StartMoving()
-      </OnDragStart>
+				self:StartMoving()
+			</OnDragStart>
 			<OnDragStop>
-        self:StopMovingOrSizing()
-      </OnDragStop>
+				self:StopMovingOrSizing()
+			</OnDragStop>
 			<OnUpdate />
 		</Scripts>
 	</Frame>
 	<GameTooltip name="LootCouncil_Scan" inherits="GameTooltipTemplate">
 		<Scripts>
 			<OnLoad>
-        this:SetOwner(WorldFrame, "ANCHOR_NONE");
-      </OnLoad>
+				this:SetOwner(WorldFrame, "ANCHOR_NONE");
+			</OnLoad>
 		</Scripts>
 	</GameTooltip>
-  <Frame name="GroupLootDropDownLCL" inherits="UIDropDownMenuTemplate" id="1" hidden="true">
-    <Anchors>
-      <Anchor point="TOPLEFT"/>
-    </Anchors>
-    <Scripts>
-      <OnLoad function="GroupLootDropDownLCL_OnLoad"/>
-    </Scripts>
-  </Frame>
+	<Frame name="GroupLootDropDownLCL" inherits="UIDropDownMenuTemplate" id="1" hidden="true">
+		<Anchors>
+			<Anchor point="TOPLEFT"/>
+		</Anchors>
+		<Scripts>
+			<OnLoad function="GroupLootDropDownLCL_OnLoad"/>
+		</Scripts>
+	</Frame>
 </Ui>
