@@ -8,6 +8,7 @@ LootCouncil_Browser.Data = {}
 LootCouncil_Browser.Elects = {}
 LootCouncil_Browser.Votes = {}
 LootCouncil_Browser.WhisperList = {}
+LootCouncil_Browser.Winners = {}
 LootCouncil_PlayerData = {}
 LootCouncil_minRank = 0;
 LootCouncil_sawFirstMessage = 0;
@@ -108,3 +109,4 @@ do
 		end
 	end
 end
+

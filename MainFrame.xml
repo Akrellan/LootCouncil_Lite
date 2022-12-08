@@ -541,6 +541,38 @@
 					</OnLoad>
 				</Scripts>
 			</Button>
+			<Button name="AnnounceButton" inherits="UIPanelButtonTemplate" hidden="true" text="Announce Winner">
+				<Size><AbsDimension x="172" y="26" /></Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT">
+						<Offset x="480" y="73" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						LootCouncil_Browser.announceWinner();
+					</OnClick>
+					<OnLoad>
+						self:SetText("Announce Winner");
+					</OnLoad>
+				</Scripts>
+			</Button>
+			<Button name="WinnersButton" inherits="UIPanelButtonTemplate" text="List">
+				<Size><AbsDimension x="50" y="26" /></Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT">
+						<Offset x="660" y="43" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						LootCouncil_Browser.listWinners();
+					</OnClick>
+					<OnLoad>
+						self:SetText("List");
+					</OnLoad>
+				</Scripts>
+			</Button>
 			<Button name="SyncButton" inherits="UIPanelButtonTemplate" hidden="true" text="Resync">
 				<Size>
 					<AbsDimension x="55" y="32" />

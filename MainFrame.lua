@@ -424,6 +424,7 @@ function LootCouncil_Browser.prepareLootFrame()
 	
 	CurrentItemTexture:Show(); -- Open up the icon box
 	AbortButton:Show(); -- Show the Abort Button
+	AnnounceButton:Show(); -- Show the Announce Winner Button
 	if iLevel then
 		CurrentItemLvl:SetText(iLevel); -- Show the Item Level
 	else
@@ -579,6 +580,7 @@ function LootCouncil_Browser.resetConsideration()
 	LootCouncil_Browser.Update();
 	CurrentItemLevelLabel:Hide();
 	AbortButton:Hide();
+	AnnounceButton:Hide(); -- Show the Announce Winner Button
 	CurrentItemLvl:SetText("");
 	EmptyTexture:Show();
 	CurrentItemLink:SetText("");
@@ -1635,6 +1637,24 @@ function LootCouncil_Browser.closeLootCouncilSession()
 	
 end
 
+function LootCouncil_Browser.announceWinner()
+	LootCouncil_Browser.sortTable(6)
+	local theEntry = LootCouncil_Browser.Elects[1];
+	if theEntry then
+		SendChatMessage(theEntry[1].." won: "..itemRunning, "RAID_WARNING");
+		table.insert(LootCouncil_Browser.Winners, {theEntry[1], itemRunning})
+	end
+end
+
+function LootCouncil_Browser.listWinners()
+	for ci=1, MAX_ENTRIES do
+		local winner = LootCouncil_Browser.Winners[ci];
+		if winner then
+			print(winner[1].." won "..winner[2]);
+		end
+	end
+end
+
 function LootCouncil_Browser.displayVotes(entry)
 	if entry then
 		local theVotes = entry[10];-- pull the votes
@@ -2021,6 +2041,7 @@ function MainFrame_OnUpdate(self, elapsed)
 				end
 				CurrentItemTexture:Show(); -- Open up the icon box	
 				AbortButton:Show(); -- Show the Abort Button
+				AnnounceButton:Show(); -- Show the Announce Winner Button
 				
 				if iLevel then
 					CurrentItemLvl:SetText(iLevel); -- Show the Item Level
