@@ -1638,7 +1638,10 @@ function LootCouncil_Browser.closeLootCouncilSession()
 end
 
 function LootCouncil_Browser.announceWinner()
-	LootCouncil_Browser.sortTable(6)
+	currSortIndex = -1			-- sortTable reverses sort order if called again with same argument
+	LootCouncil_Browser.sortTable(6)	-- sort ascending, by votes
+	LootCouncil_Browser.sortTable(6)	-- sort descending, by votes
+
 	local theEntry = LootCouncil_Browser.Elects[1];
 	if theEntry then
 		SendChatMessage(theEntry[1].." won: "..itemRunning, "RAID_WARNING");
