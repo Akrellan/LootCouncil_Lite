@@ -1644,12 +1644,18 @@ function LootCouncil_Browser.announceWinner()
 
 	local theEntry = LootCouncil_Browser.Elects[1];
 	if theEntry then
+		local secondEntry = LootCouncil_Browser.Elects[2];
+		if secondEntry and theEntry[7] == secondEntry[7] then
+			print("It's a tie!");
+			return
+		end
 		SendChatMessage(theEntry[1].." won: "..itemRunning, "RAID_WARNING");
 		table.insert(LootCouncil_Browser.Winners, {theEntry[1], itemRunning})
 	end
 end
 
 function LootCouncil_Browser.listWinners()
+	print("Recorded winners:");
 	for ci=1, MAX_ENTRIES do
 		local winner = LootCouncil_Browser.Winners[ci];
 		if winner then
